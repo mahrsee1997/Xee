@@ -784,6 +784,7 @@ class EarthEngineBackendArray(backends.BackendArray):
     # Get the right range of Images in the collection, either a single image or
     # a range of images...
     self._ee_init_check()
+    return self.store.image_collection.first()
     start, stop, stride = image_slice.indices(self.shape[0])
 
     # If the input images have IDs, just slice them. Otherwise, we need to do
